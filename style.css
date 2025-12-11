@@ -1,0 +1,176 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #48e2;
+    gap: 15px;
+}
+
+body, div{
+    box-sizing: border-box;
+}
+
+nav, header, footer, main, aside{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.grid{
+    display: grid;
+    margin: auto;
+    grid-template-columns: 
+        minmax(200px, 1fr) 
+        minmax(300px, 3fr)
+        minmax(200px, 1fr)
+    ; 
+    grid-template-rows:1fr;
+    grid-auto-flow: dense;
+    gap: 10px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    grid-template-areas: 
+        "nav main aside"
+    ;
+    max-width: 80%;
+    flex-grow: 1;
+    align-items: start;
+
+}
+
+.grid--item, .header, .footer{
+    text-align: center;
+}
+
+.grid--item{
+    background-color: #fff;
+    border-radius: 6px;
+}
+header{
+    background-color: #48e;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+aside{
+    grid-area: aside;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+footer{
+    grid-area: footer;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+    padding: 50px;
+    flex-grow: 1;
+}
+
+h1 , h2 ,h3 ,h4 , h5, h6{
+    text-wrap: balance;
+}
+
+h1{
+    text-align: center;
+    font-size: 35px;
+}
+
+.text-content{
+    max-width: 85%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #2223;
+    min-height: 25vh;
+    max-height: 75vh;
+    overflow: auto;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+p{
+    text-align: justify;
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    color: #111;
+}
+
+nav , aside{
+    position: sticky;
+    top: 5px;
+    height: min-content;
+
+}
+
+nav ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+nav li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #46e;
+    padding: 15px 20px;
+}
+
+
+nav li a:hover{
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+.text--aside{
+    max-width: 95%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #2223;
+    min-height: 25vh;
+    max-height: 75vh;
+    overflow: auto;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .grid{
+    grid-template-columns: 100%; 
+    grid-template-areas: 
+        "nav"
+        "main"
+        "aside"
+        ;
+    }
+
+    nav , aside{
+    position: initial;
+
+    }
+}

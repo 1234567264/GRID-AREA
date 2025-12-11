@@ -1,0 +1,41 @@
+Grid Area 
+- El Grid Area nos permite crear una especie de layout teórico donde le decimos al navegador, 
+  en cuantas filas queremos separar nuestro contenedor y en cuantas columnas, o asignarle un nombre
+  que después le podemos reemplazar por un grid, básicamente podemos asignar un elemento a un área
+  específica que nosotros le dimos en grid. 
+
+
+
+Atributo: 
+grid-area : Con este atributo podemos reemplazar a los atributos "grid-column" y "grid-row" 
+            en el sentido de que podemos poner hasta cuanto crece el elemento o sea el "span N" 
+
+    Sintaxis: 
+        - Poner primero el span que va para el grid-row (cuantas filas ocupará).
+        - Poner un / después de eso.
+        - Poner por último el span del gri-column (cuantas columnas ocupará).
+    
+    EJM:
+
+                                    @media screen and (min-width:1201px){
+                                        .grid{
+                                            left: 16vw;
+                                            max-width: 80vw;
+                                            grid-template-rows: repeat(3, 320px);
+                                            grid-auto-rows: 320px;
+                                            row-gap: 40px;
+                                            grid-auto-flow: dense;
+                                        }
+                                    
+                                        .grid-item:first-child{
+                                            outline: 2px solid #f00;
+                                            outline-offset: 5px;
+                                            grid-area: span 2 / span 2; /*PRIMERO ROW Y LUEGO COLUMN*/
+                                        }
+                                    
+                                        .grid-item:nth-of-type(11){
+                                            grid-area:  span 1 / span 3;
+                                            
+                                        }
+                                    
+                                    }
